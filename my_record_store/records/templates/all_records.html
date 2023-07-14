@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Records</title>
-</head>
 
-<body>
+{% extends "master.html" %}
 
-    <h1>Records</h1>
+{% block title %}
+My Record Store - Record of all Records
+{% endblock %}
 
-    <ul>
-        {% for x in myrecords %}
-        <li><a href="details/{{ x.id }}">{{ x.artist }} {{ x.album }}</a></li>
-        {% endfor %}
-    </ul>
+{% block content %}
 
-</body>
+<p><a href="/">HOME</a></p>
 
-</html>
+<h1>Records</h1>
+
+<ul>
+    {% for x in myrecords %}
+    <li><a href="details/{{ x.id }}">{{ x.artist }} - {{ x.album }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
