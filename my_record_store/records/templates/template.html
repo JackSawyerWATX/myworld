@@ -1,13 +1,17 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="{% static 'mystyles.css' %}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gijoe</title>
+    <title>Template</title>
 </head>
 
-<body style="padding: 45px;">
+<body>
     {% for x in gijoe %}
     <h1>{{ x }}</h1>
     {% endfor %}

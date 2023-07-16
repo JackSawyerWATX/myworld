@@ -1,5 +1,3 @@
-
-
 {% extends "master.html" %}
 
 {% block title %}
@@ -8,10 +6,12 @@ Details about {{ myrecord.artist }} - {{ myrecord.album }}
 
 
 {% block content %}
-<h1>{{ myrecord.artist }}   -   {{ myrecord.album }}</h1>
+<div class="mycard">
+    <h1>{{ myrecord.artist }} - {{ myrecord.album }}</h1>
 
-<p>Record Label: {{ myrecord.record_label }}</p>
-<p>Release Date: {{ myrecord.released }}</p>
+    <p>Record Label: {{ myrecord.record_label }}</p>
+    <p>Release Date: {{ myrecord.released }}</p>
 
-<p>Back to <a href="/records/{{ x.id }}">Records</a></p>
+    <!-- <p>Back to <a href="/all_records/{{ x.id }}">Records</a></p> -->
+</div>
 {% endblock %}

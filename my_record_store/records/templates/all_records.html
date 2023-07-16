@@ -1,5 +1,3 @@
-
-
 {% extends "master.html" %}
 
 {% block title %}
@@ -7,15 +5,15 @@ My Record Store - Record of all Records
 {% endblock %}
 
 {% block content %}
+<div class="mycard">
+    <p><a href="/">HOME</a></p>
 
-<p><a href="/">HOME</a></p>
+    <h1>Records</h1>
 
-<h1>Records</h1>
-
-<ul>
-    {% for x in myrecords %}
-    <li><a href="details/{{ x.id }}">{{ x.artist }} - {{ x.album }}</a></li>
-    {% endfor %}
-</ul>
-
+    <ul>
+        {% for x in myrecords %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.artist }} - {{ x.album }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
