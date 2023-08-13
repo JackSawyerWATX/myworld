@@ -78,11 +78,17 @@ WSGI_APPLICATION = 'my_record_store.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'jackHsawyer',
+        'PASSWORD': 'b!SH0p8156',
+        'HOST': 'djangorecords.citx1u0yzs3g.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
+        # Superuser UserName: jonathan.fausset
+        # password: b!SH0p8156
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

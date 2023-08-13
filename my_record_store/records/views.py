@@ -22,12 +22,22 @@ def details(request, id):
     return HttpResponse(template.render(context, request))
 
 def main(request):
-  template = loader.get_template('main.html')
-  return HttpResponse(template.render())
+    template = loader.get_template('main.html')
+    context = {
+        'request': request
+    }
+    return HttpResponse(template.render(context, request))
 
 def testing(request):
+  myrecords = Record.objects.all().values()
+  mydata = Record.objects.all().values()
+  # mydata = Record.objects.values_list('artist')
+  mydata = Record.objects.all().order_by('artist').values()
   template = loader.get_template('template.html')
   context = {
-    'gijoe': ['Porkchop Sandwiches!'],   
+    'firstname': 'Jonathan',
+    'drt': ['Django Records & Tapes'],
+    'myrecords': myrecords,
+    'myrecords': mydata,
   }
   return HttpResponse(template.render(context, request))

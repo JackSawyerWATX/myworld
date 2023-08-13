@@ -3,20 +3,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{% static 'mystyles.css' %}">
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>Testing</title>
 </head>
 
 <body style="padding: 50px;">
-    {% for x in gijoe %}
+
+    {% include "mymenu.html" with me="JONATHAN" sponsor="DJANGO RECORDS" %}
+
+    <h1>Hello {{ firstname }}, how are you?</h1>
+    {% for x in drt %}
     <h1>{{ x }}</h1>
     {% endfor %}
 
-    <p>Uhh... we're gonna need to ask you to kindly exit the premises immediately.</p>
+    <table border='1'>
+        <tr>
+          <th>ID</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Record Label</th>
+          <th>Release Date  </th>
+        </tr>
+        {% for x in myrecords %}
+          <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.artist }}</td>
+            <td>{{ x.album }}</td>
+            <td>{{ x.record_label }}</td>
+            <td>{{ x.released }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+
+    <p>Thanks for stopping by!</p>
 
 </body>
 
